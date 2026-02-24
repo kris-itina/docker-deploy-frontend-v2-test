@@ -1,0 +1,7 @@
+services:
+  frontend:
+    image: ${DOCKER_HUB_USERNAME:-your-dockerhub-username}/234-deploylab-frontend:latest
+    pull_policy: always
+    ports:
+      - "80:8080"
+    restart: unless-stopped

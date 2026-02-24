@@ -29,7 +29,7 @@ This is a Vue 3 application built with Vite that provides a grade calculator int
 - **Build Tool:** Vite 7
 - **Language:** TypeScript
 - **GraphQL Client:** Apollo Client v3 with `@vue/apollo-composable`
-- **Styling:** Bootstrap 5
+- **Styling:** Tailwind CSS 4
 - **Testing:** Vitest + Vue Test Utils
 
 ### Project Structure
@@ -62,7 +62,7 @@ The application uses Vue 3 Composables (reusable composition functions):
 Three environment files in project root:
 - **`.env`** (default/development): `http://localhost:8080/graphql`
 - **`.env.development`** (staging): `http://13.250.41.39:8082/graphql`
-- **`.env.production`**: `http://52.74.162.217:8085/graphql`
+- **`.env.production`**: `http://43.208.224.38:8082/graphql`
 
 Access via `import.meta.env.VITE_*` (all env vars must be prefixed with `VITE_`)
 
@@ -84,7 +84,7 @@ Single-file component structure with Composition API:
 ## Docker Deployment
 
 Multi-stage Docker build:
-1. **Build stage:** Node 18 Alpine - installs deps and runs `npm run build`
+1. **Build stage:** Node 22 Alpine - installs deps and runs `npm run build`
 2. **Production stage:** nginx Alpine - serves static files
 
 Build with environment-specific configuration:
@@ -139,6 +139,6 @@ Compared to the original Angular 6 application:
 
 - All environment variables must be prefixed with `VITE_` to be exposed to the client
 - Apollo Client is provided at the app root - all components have access via `@vue/apollo-composable`
-- Bootstrap 5 CSS is imported in [main.ts](src/main.ts)
+- Tailwind CSS is imported via `style.css` in [main.ts](src/main.ts)
 - TypeScript strict mode is enabled
 - Path alias `@/` can be used for imports (e.g., `import { useGrade } from '@/composables/useGrade'`)

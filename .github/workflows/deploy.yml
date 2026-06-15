@@ -58,4 +58,3 @@ jobs:
             docker compose down            
             docker compose up -d
             rm -rf /home/ubuntu/frontend
-# trigger rebuild
